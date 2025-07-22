@@ -120,7 +120,7 @@ class GorillasIntro:
 
         self.canvas.create_text(WIDTH // 2, 100, text="GORILLAS.PY", font=("Courier", 36, "bold"), fill="darkred")
         self.canvas.create_text(WIDTH // 2, 150, text="A faithful remake of the QBasic classic", font=("Courier", 16), fill="black")
-        self.canvas.create_text(WIDTH // 2, 180, text="Remake by ChatGPT", font=("Courier", 12), fill="gray")
+        self.canvas.create_text(WIDTH // 2, 180, text="Remake", font=("Courier", 12), fill="gray")
 
         self.start_btn = tk.Button(root, text="Start Game", font=("Courier", 14), command=self.start_game)
         self.start_btn_window = self.canvas.create_window(WIDTH // 2, 250, window=self.start_btn)
