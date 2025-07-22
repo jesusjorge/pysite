@@ -1,1 +1,1 @@
-print("Welcome to the PySite 6")
+print("Welcome to the PySite 7")
