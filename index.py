@@ -42,25 +42,25 @@ html = """
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    color: #00ffe1;
+    color: #00ffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
 
-    /* 👇 New animated gradient with strong contrast */
-    background: linear-gradient(-60deg,
-      #0ff 0%,
-      #f0f 25%,
-      #0f0 50%,
-      #00f 75%,
-      #ff0 100%);
-    background-size: 800% 800%;
-    animation: gradientMove 5s ease-in-out infinite;
+    /* Tron-inspired cool glow gradient */
+    background: linear-gradient(-45deg,
+      #0f0f1e 0%,
+      #081b2f 25%,
+      #0e2b3d 50%,
+      #081b2f 75%,
+      #0f0f1e 100%);
+    background-size: 600% 600%;
+    animation: gradientShift 12s ease-in-out infinite;
   }
 
-  @keyframes gradientMove {
+  @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -68,7 +68,7 @@ html = """
 
   h1 {
     font-size: 2em;
-    text-shadow: 0 0 10px #00ffe1;
+    text-shadow: 0 0 15px #00ffff;
   }
 
   .input-box {
@@ -78,39 +78,42 @@ html = """
   input {
     padding: 10px;
     font-size: 1em;
-    border: 2px solid #00ffe1;
+    border: 2px solid #00ffff;
     border-radius: 5px;
-    background: transparent;
-    color: #00ffe1;
+    background: rgba(0, 0, 0, 0.4);
+    color: #00ffff;
     width: 300px;
     outline: none;
   }
 
   button {
     padding: 12px 25px;
-    background: #00ffe1;
+    background: #00ffff;
+    color: #000;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
     margin: 5px;
+    box-shadow: 0 0 10px #00ffff;
   }
 
   button:hover {
-    background: #007a74;
+    background: #00b0b0;
+    box-shadow: 0 0 20px #00ffff;
   }
 
   #response, #reverse {
     margin-top: 20px;
     font-size: 1.2em;
     min-height: 1em;
-    text-shadow: 0 0 5px #00ffe1;
+    text-shadow: 0 0 5px #00ffff;
   }
 
   .spinner {
-    border: 3px solid #00ffe122;
-    border-top: 3px solid #00ffe1;
+    border: 3px solid #00ffff22;
+    border-top: 3px solid #00ffff;
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -124,6 +127,7 @@ html = """
     100% { transform: rotate(360deg); }
   }
 </style>
+
 
 </head>
 <body>
