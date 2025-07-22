@@ -28,7 +28,7 @@ The Pygame documentation is pretty good, and can be found at http://www.pygame.o
 Unfortunately there is no sound with this game.
 """
 
-import pygame, sys, time, random, math
+import sys, time, random, math
 from pygame.locals import *
 """We'll import quite a few modules for this game. "pygame" has all the graphics & game-related functions that the
 Pygame game engine provides. "sys" has the exit() function. "time" has the sleep() function. "random" has the randint()
