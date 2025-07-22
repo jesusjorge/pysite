@@ -46,7 +46,7 @@ file_menu.add_command(label="Open...", command=open_file)
 file_menu.add_command(label="Save As...", command=save_file)
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=exit_app)
-menu_bar.add_cascade(label="File", menu=file_menu)
+menu_bar.add_cascade(label="Archivo", menu=file_menu)
 
 root.config(menu=menu_bar)
 root.mainloop()
