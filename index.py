@@ -1,52 +1,111 @@
 import tkinter as tk
-from tkinter import filedialog, messagebox
-from tkinter.scrolledtext import ScrolledText
+import math
+import random
 
-def new_file():
-    text_area.delete("1.0", tk.END)
-    root.title("This is just a Test of Python from Web - Notepad")
+WIDTH = 800
+HEIGHT = 600
+GRAVITY = 9.8
 
-def open_file():
-    file_path = filedialog.askopenfilename(
-        defaultextension=".txt",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-    )
-    if file_path:
-        with open(file_path, "r", encoding="utf-8") as file:
-            text_area.delete("1.0", tk.END)
-            text_area.insert(tk.END, file.read())
-        root.title(f"{file_path} - Notepad")
+class GorillasGame:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Gorillas")
 
-def save_file():
-    file_path = filedialog.asksaveasfilename(
-        defaultextension=".txt",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-    )
-    if file_path:
-        with open(file_path, "w", encoding="utf-8") as file:
-            file.write(text_area.get("1.0", tk.END))
-        root.title(f"{file_path} - Notepad")
+        self.canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg="skyblue")
+        self.canvas.pack()
 
-def exit_app():
-    root.quit()
+        self.buildings = []
+        self.gorillas = []
+        self.current_player = 0  # 0 or 1
+        self.banana = None
 
-root = tk.Tk()
-root.title("Wep4 - Notepad")
-root.geometry("800x600")
+        self.generate_city()
+        self.place_gorillas()
 
-# Text area
-text_area = ScrolledText(root, font=("Consolas", 12))
-text_area.pack(fill=tk.BOTH, expand=True)
+        self.angle_entry = tk.Entry(root)
+        self.angle_entry.pack(side="left")
+        self.angle_entry.insert(0, "45")
 
-# Menu bar
-menu_bar = tk.Menu(root)
-file_menu = tk.Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="Nuevo", command=new_file)
-file_menu.add_command(label="Abrir...", command=open_file)
-file_menu.add_command(label="Guardar como...", command=save_file)
-file_menu.add_separator()
-file_menu.add_command(label="Salir", command=exit_app)
-menu_bar.add_cascade(label="Archivo", menu=file_menu)
+        self.vel_entry = tk.Entry(root)
+        self.vel_entry.pack(side="left")
+        self.vel_entry.insert(0, "50")
 
-root.config(menu=menu_bar)
-root.mainloop()
+        self.fire_button = tk.Button(root, text="Fire!", command=self.fire)
+        self.fire_button.pack(side="left")
+
+        self.status = tk.Label(root, text="Player 1's turn")
+        self.status.pack(side="left")
+
+    def generate_city(self):
+        x = 0
+        while x < WIDTH:
+            w = random.randint(40, 80)
+            h = random.randint(100, 400)
+            b = self.canvas.create_rectangle(x, HEIGHT-h, x+w, HEIGHT, fill="gray")
+            self.buildings.append((x, x+w, HEIGHT-h, b))
+            x += w
+
+    def place_gorillas(self):
+        left_building = self.buildings[2]
+        right_building = self.buildings[-3]
+
+        x1 = (left_building[0] + left_building[1]) // 2
+        y1 = left_building[2]
+        g1 = self.canvas.create_oval(x1-10, y1-30, x1+10, y1-10, fill="orange")
+
+        x2 = (right_building[0] + right_building[1]) // 2
+        y2 = right_building[2]
+        g2 = self.canvas.create_oval(x2-10, y2-30, x2+10, y2-10, fill="orange")
+
+        self.gorillas = [(x1, y1-20, g1), (x2, y2-20, g2)]
+
+    def fire(self):
+        try:
+            angle = float(self.angle_entry.get())
+            velocity = float(self.vel_entry.get())
+        except:
+            self.status.config(text="Invalid input!")
+            return
+
+        if self.banana:
+            self.canvas.delete(self.banana)
+
+        x0, y0, _ = self.gorillas[self.current_player]
+        angle_rad = math.radians(angle)
+
+        # Adjust angle/direction for player 2
+        if self.current_player == 1:
+            angle_rad = math.pi - angle_rad
+
+        vx = velocity * math.cos(angle_rad)
+        vy = -velocity * math.sin(angle_rad)
+
+        self.animate_banana(x0, y0, vx, vy, 0)
+
+    def animate_banana(self, x, y, vx, vy, t):
+        if self.banana:
+            self.canvas.delete(self.banana)
+
+        xt = x + vx * t
+        yt = y + vy * t + 0.5 * GRAVITY * t**2
+
+        if xt < 0 or xt > WIDTH or yt > HEIGHT:
+            self.status.config(text="Missed! Next turn.")
+            self.current_player = 1 - self.current_player
+            self.status.config(text=f"Player {self.current_player + 1}'s turn")
+            return
+
+        self.banana = self.canvas.create_oval(xt-5, yt-5, xt+5, yt+5, fill="yellow")
+
+        # Check hit
+        for gx, gy, g in self.gorillas:
+            if abs(xt - gx) < 15 and abs(yt - gy) < 15:
+                self.canvas.create_text(WIDTH//2, HEIGHT//2, text=f"Player {self.current_player + 1} Wins!", font=("Arial", 24), fill="red")
+                return
+
+        self.root.after(30, lambda: self.animate_banana(x, y, vx, vy, t + 0.3))
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    game = GorillasGame(root)
+    root.mainloop()
