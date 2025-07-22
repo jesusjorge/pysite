@@ -1,3 +1,13 @@
+import subprocess
+import sys
+
+try:
+    import pygame
+except ImportError:
+    print("Pygame not found. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pygame"])
+    import pygame
+
 """Hello, and welcome to the source code of Gorillas.py. This program is meant to be very well documented so that a
 novice programmer can follow along. This program was written by Al Sweigart as a companion for his free, Creative
 Commons-licensed book "Invent Your Own Computer Games with Python", which is available in full at:
