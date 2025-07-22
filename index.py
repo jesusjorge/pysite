@@ -19,6 +19,7 @@ class GorillasIntro:
 
         self.canvas.create_text(WIDTH // 2, 100, text="GORILLAS.PY", font=("Courier", 36, "bold"), fill="darkred")
         self.canvas.create_text(WIDTH // 2, 150, text="A faithful remake of the QBasic classic", font=("Courier", 16), fill="black")
+        , fill="gray")
 
         self.start_btn = tk.Button(root, text="Start Game", font=("Courier", 14), command=self.start_game)
         self.start_btn_window = self.canvas.create_window(WIDTH // 2, 250, window=self.start_btn)
@@ -103,9 +104,14 @@ class GorillasGame:
         b2 = self.buildings[-3]
 
         def draw_gorilla(xc, top):
-            body = self.canvas.create_oval(xc - 10, top - 30, xc + 10, top - 10, fill="orange")
-            arm = self.canvas.create_line(xc - 10, top - 20, xc + 10, top - 20, width=4)
-            return (xc, top - 20, body, arm)
+            # Draw more realistic gorilla: head, body, legs, and arms
+            body = self.canvas.create_oval(xc - 12, top - 40, xc + 12, top - 10, fill="saddlebrown", outline="black")
+            head = self.canvas.create_oval(xc - 8, top - 55, xc + 8, top - 40, fill="chocolate", outline="black")
+            left_leg = self.canvas.create_line(xc - 8, top - 10, xc - 8, top + 10, width=4, fill="black")
+            right_leg = self.canvas.create_line(xc + 8, top - 10, xc + 8, top + 10, width=4, fill="black")
+            left_arm = self.canvas.create_line(xc - 12, top - 30, xc - 25, top - 45, width=4, fill="black")
+            right_arm = self.canvas.create_line(xc + 12, top - 30, xc + 25, top - 45, width=4, fill="black")
+            return (xc, top - 40, body, head)
 
         x1 = (b1[0] + b1[1]) // 2
         y1 = b1[2]
