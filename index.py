@@ -31,7 +31,7 @@ def exit_app():
     root.quit()
 
 root = tk.Tk()
-root.title("Wep2222 - Notepad")
+root.title("Wep3 - Notepad")
 root.geometry("800x600")
 
 # Text area
