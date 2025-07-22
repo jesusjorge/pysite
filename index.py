@@ -49,5 +49,5 @@ html = """
 </html>
 """
 
-webview.create_window("pysite", html=html, js_api=api)
+webview.create_window("🍕 pysite", html=html, js_api=api)
 webview.start()
