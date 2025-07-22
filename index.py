@@ -17,10 +17,10 @@ def require(module_name, pip_name=None):
         subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", pip_name])
         return importlib.import_module(module_name)
 
-#pygame = require("pygame")
+webview = require("webview","pywebview")
 
 # app.py
-import webview
+#import webview
 
 class API:
     def say_hello(self, name):
