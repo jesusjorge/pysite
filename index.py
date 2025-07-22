@@ -18,8 +18,7 @@ class GorillasIntro:
         self.mouth = self.canvas.create_arc(675, 95, 725, 125, start=0, extent=-180, style=tk.ARC, width=2)
 
         self.canvas.create_text(WIDTH // 2, 100, text="GORILLAS.PY", font=("Courier", 36, "bold"), fill="darkred")
-        self.canvas.create_text(WIDTH // 2, 150, text="A faithful remake of the QBasic classic", font=("Courier", 16), fill="black")
-        , fill="gray")
+        self.canvas.create_text(WIDTH // 2, 150, text="A faithful remake of the QBasic classic", font=("Courier", 16), fill="black"), fill="gray")
 
         self.start_btn = tk.Button(root, text="Start Game", font=("Courier", 14), command=self.start_game)
         self.start_btn_window = self.canvas.create_window(WIDTH // 2, 250, window=self.start_btn)
