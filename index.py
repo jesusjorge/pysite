@@ -31,7 +31,7 @@ def exit_app():
     root.quit()
 
 root = tk.Tk()
-root.title("Untitled - Notepad")
+root.title("Wep - Notepad")
 root.geometry("800x600")
 
 # Text area
@@ -41,11 +41,11 @@ text_area.pack(fill=tk.BOTH, expand=True)
 # Menu bar
 menu_bar = tk.Menu(root)
 file_menu = tk.Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="New", command=new_file)
-file_menu.add_command(label="Open...", command=open_file)
-file_menu.add_command(label="Save As...", command=save_file)
+file_menu.add_command(label="Nuevo", command=new_file)
+file_menu.add_command(label="Abrir...", command=open_file)
+file_menu.add_command(label="Guardar como...", command=save_file)
 file_menu.add_separator()
-file_menu.add_command(label="Exit", command=exit_app)
+file_menu.add_command(label="Salir", command=exit_app)
 menu_bar.add_cascade(label="Archivo", menu=file_menu)
 
 root.config(menu=menu_bar)
