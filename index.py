@@ -22,11 +22,11 @@ class GorillasGame:
         self.generate_city()
         self.place_gorillas()
 
-        self.angle_entry = tk.Entry(root)
+        self.angle_entry = tk.Entry(root, width=5)
         self.angle_entry.pack(side="left")
         self.angle_entry.insert(0, "45")
 
-        self.vel_entry = tk.Entry(root)
+        self.vel_entry = tk.Entry(root, width=5)
         self.vel_entry.pack(side="left")
         self.vel_entry.insert(0, "50")
 
@@ -40,7 +40,7 @@ class GorillasGame:
         x = 0
         while x < WIDTH:
             w = random.randint(40, 80)
-            h = random.randint(100, 400)
+            h = random.randint(100, 300)
             b = self.canvas.create_rectangle(x, HEIGHT-h, x+w, HEIGHT, fill="gray")
             self.buildings.append((x, x+w, HEIGHT-h, b))
             x += w
@@ -73,12 +73,15 @@ class GorillasGame:
         x0, y0, _ = self.gorillas[self.current_player]
         angle_rad = math.radians(angle)
 
-        # Adjust angle/direction for player 2
+        # Adjust angle for player 2 (reverse shot)
         if self.current_player == 1:
             angle_rad = math.pi - angle_rad
 
         vx = velocity * math.cos(angle_rad)
         vy = -velocity * math.sin(angle_rad)
+
+        # Offset banana from gorilla so it doesn't trigger instant hit
+        x0 += 15 if self.current_player == 0 else -15
 
         self.animate_banana(x0, y0, vx, vy, 0)
 
@@ -90,18 +93,19 @@ class GorillasGame:
         yt = y + vy * t + 0.5 * GRAVITY * t**2
 
         if xt < 0 or xt > WIDTH or yt > HEIGHT:
-            self.status.config(text="Missed! Next turn.")
+            self.status.config(text="Missed! Switching turn...")
             self.current_player = 1 - self.current_player
             self.status.config(text=f"Player {self.current_player + 1}'s turn")
             return
 
         self.banana = self.canvas.create_oval(xt-5, yt-5, xt+5, yt+5, fill="yellow")
 
-        # Check hit
-        for gx, gy, g in self.gorillas:
-            if abs(xt - gx) < 15 and abs(yt - gy) < 15:
-                self.canvas.create_text(WIDTH//2, HEIGHT//2, text=f"Player {self.current_player + 1} Wins!", font=("Arial", 24), fill="red")
-                return
+        # Check for collision with opponent
+        enemy_index = 1 - self.current_player
+        gx, gy, _ = self.gorillas[enemy_index]
+        if abs(xt - gx) < 15 and abs(yt - gy) < 15:
+            self.canvas.create_text(WIDTH//2, HEIGHT//2, text=f"Player {self.current_player + 1} Wins!", font=("Arial", 24), fill="red")
+            return
 
         self.root.after(30, lambda: self.animate_banana(x, y, vx, vy, t + 0.3))
 
