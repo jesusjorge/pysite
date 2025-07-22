@@ -4,7 +4,7 @@ from tkinter.scrolledtext import ScrolledText
 
 def new_file():
     text_area.delete("1.0", tk.END)
-    root.title("Untitled - Notepad")
+    root.title("This is just a Test of Python from Web - Notepad")
 
 def open_file():
     file_path = filedialog.askopenfilename(
