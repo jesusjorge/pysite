@@ -41,7 +41,6 @@ html = """
   <style>
     body {
       margin: 0;
-      background: radial-gradient(ellipse at center, #0f2027, #203a43, #2c5364);
       font-family: 'Segoe UI', sans-serif;
       color: #00ffe1;
       display: flex;
@@ -49,14 +48,26 @@ html = """
       align-items: center;
       justify-content: center;
       height: 100vh;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a40);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
     }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     h1 {
       font-size: 2em;
       text-shadow: 0 0 10px #00ffe1;
     }
+
     .input-box {
       margin: 20px;
     }
+
     input {
       padding: 10px;
       font-size: 1em;
@@ -67,6 +78,7 @@ html = """
       width: 300px;
       outline: none;
     }
+
     button {
       padding: 12px 25px;
       background: #00ffe1;
@@ -77,15 +89,18 @@ html = """
       transition: 0.3s;
       margin: 5px;
     }
+
     button:hover {
       background: #007a74;
     }
+
     #response, #reverse {
       margin-top: 20px;
       font-size: 1.2em;
       min-height: 1em;
       text-shadow: 0 0 5px #00ffe1;
     }
+
     .spinner {
       border: 3px solid #00ffe122;
       border-top: 3px solid #00ffe1;
@@ -96,6 +111,7 @@ html = """
       display: none;
       margin-top: 10px;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -139,6 +155,7 @@ html = """
 </body>
 </html>
 """
+
 
 webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
 webview.start()
