@@ -19,35 +19,126 @@ def require(module_name, pip_name=None):
 
 webview = require("webview","pywebview")
 
-# app.py
-#import webview
-
+# Backend API
 class API:
     def say_hello(self, name):
-        print(f"Hello from frontend: {name}")
-        return f"Hello {name}, from Python backend!"
+        print(f"JS → Python: say_hello({name})")
+        return f"🌟 Hello {name.upper()}! You're connected to the Python backend."
+
+    def reverse_text(self, text):
+        print(f"JS → Python: reverse_text({text})")
+        return text[::-1]
 
 api = API()
 
+# Fancy HTML + CSS + JS
 html = """
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Front-end</h1>
-    <input id="nameInput" placeholder="Type your name" />
-    <button onclick="sayHi()">Say Hi</button>
-    <p id="response"></p>
-    <script>
-      function sayHi() {
-        let name = document.getElementById("nameInput").value;
-        window.pywebview.api.say_hello(name).then(function(response) {
-          document.getElementById("response").innerText = response;
-        });
-      }
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🚀 PyFuturism Interface</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at center, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      color: #00ffe1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2em;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+    .input-box {
+      margin: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+      border: 2px solid #00ffe1;
+      border-radius: 5px;
+      background: transparent;
+      color: #00ffe1;
+      width: 300px;
+      outline: none;
+    }
+    button {
+      padding: 12px 25px;
+      background: #00ffe1;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 5px;
+    }
+    button:hover {
+      background: #007a74;
+    }
+    #response, #reverse {
+      margin-top: 20px;
+      font-size: 1.2em;
+      min-height: 1em;
+      text-shadow: 0 0 5px #00ffe1;
+    }
+    .spinner {
+      border: 3px solid #00ffe122;
+      border-top: 3px solid #00ffe1;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      display: none;
+      margin-top: 10px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🤖 Welcome to PyFuturism</h1>
+  <div class="input-box">
+    <input id="nameInput" placeholder="Type your name..." />
+  </div>
+  <div>
+    <button onclick="sayHi()">Greet</button>
+    <button onclick="reverse()">Reverse</button>
+  </div>
+  <div class="spinner" id="loader"></div>
+  <p id="response"></p>
+  <p id="reverse"></p>
+
+  <script>
+    function setLoading(show) {
+      document.getElementById("loader").style.display = show ? "block" : "none";
+    }
+
+    async function sayHi() {
+      const name = document.getElementById("nameInput").value;
+      setLoading(true);
+      const response = await window.pywebview.api.say_hello(name);
+      document.getElementById("response").innerText = response;
+      setLoading(false);
+    }
+
+    async function reverse() {
+      const text = document.getElementById("nameInput").value;
+      setLoading(true);
+      const reversed = await window.pywebview.api.reverse_text(text);
+      document.getElementById("reverse").innerText = "🔁 Reversed: " + reversed;
+      setLoading(false);
+    }
+  </script>
+</body>
 </html>
 """
 
-webview.create_window("🍕 pysite", html=html, js_api=api)
+webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
 webview.start()
