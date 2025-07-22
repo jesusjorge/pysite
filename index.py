@@ -6,6 +6,39 @@ WIDTH = 800
 HEIGHT = 600
 GRAVITY = 9.8
 
+class GorillasIntro:
+    def __init__(self, root):
+        self.root = root
+        self.canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg="skyblue")
+        self.canvas.pack()
+
+        self.sun = self.canvas.create_oval(650, 50, 750, 150, fill="yellow", outline="orange", width=3)
+        self.eye1 = self.canvas.create_oval(675, 75, 685, 85, fill="black")
+        self.eye2 = self.canvas.create_oval(715, 75, 725, 85, fill="black")
+        self.mouth = self.canvas.create_arc(675, 95, 725, 125, start=0, extent=-180, style=tk.ARC, width=2)
+
+        self.canvas.create_text(WIDTH // 2, 100, text="GORILLAS.PY", font=("Courier", 36, "bold"), fill="darkred")
+        self.canvas.create_text(WIDTH // 2, 150, text="A faithful remake of the QBasic classic", font=("Courier", 16), fill="black")
+        self.canvas.create_text(WIDTH // 2, 180, text="Remake by ChatGPT", font=("Courier", 12), fill="gray")
+
+        self.start_btn = tk.Button(root, text="Start Game", font=("Courier", 14), command=self.start_game)
+        self.start_btn_window = self.canvas.create_window(WIDTH // 2, 250, window=self.start_btn)
+
+        self.sun_angle = 0
+        self.animate_sun()
+
+    def animate_sun(self):
+        self.sun_angle += 0.1
+        offset = math.sin(self.sun_angle) * 3
+        self.canvas.move(self.eye1, 0, offset)
+        self.canvas.move(self.eye2, 0, offset)
+        self.canvas.after(100, self.animate_sun)
+
+    def start_game(self):
+        self.start_btn.destroy()
+        self.canvas.destroy()
+        GorillasGame(self.root)
+
 class GorillasGame:
     def __init__(self, root):
         self.root = root
@@ -230,5 +263,5 @@ class GorillasGame:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    GorillasGame(root)
+    GorillasIntro(root)
     root.mainloop()
