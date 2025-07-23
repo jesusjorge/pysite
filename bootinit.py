@@ -19,4 +19,4 @@ class init:
           subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", pip_name])
           return importlib.import_module(module_name)
 
-print("Hello World from boot init fresh 2")
+print("Hello World from boot init fresh 3")
