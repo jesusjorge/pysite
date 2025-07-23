@@ -11,13 +11,15 @@ I barely even ask or inform the user that a large script is about to be executed
 
 This doesn’t feel like proper software. It acts more like an aggressive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of harming your machine, it delivers software using extremely questionable, borderline-illegal methods.
 
-| **Software**                         | **Virus**                                           |
-| ------------------------------------ | --------------------------------------------------- |
-| Intended to perform useful tasks     | Intended to replicate and spread                    |
-| Requires user permission (typically) | Tries to avoid detection and bypass consent         |
-| Has a clear, documented purpose      | Often hides its real purpose                        |
-| Usually sandboxed or controlled      | Tries to escape control or manipulate systems       |
-| Is transparent about behavior        | Is deceptive by design                              |
+|                 | **Software** 🧠   | **Virus** 🦠            | **Trojan** 🐴              | **Hacker** 🧑‍💻                   |
+| --------------- | ----------------- | ----------------------- | -------------------------- | ---------------------------------- |
+| **What is it?** | Code              | Self-replicating code   | Deceptive code             | Human using code as weapon         |
+| **Intent**      | To serve or solve | To spread and disrupt   | To trick and infiltrate    | To subvert or repurpose            |
+| **Entry**       | You install it    | It sneaks in or hijacks | You run it unknowingly     | Finds a hole and gets in           |
+| **Trust**       | Transparent       | None                    | Pretends to be trusted     | Exploits misplaced trust           |
+| **Autonomy**    | Runs when asked   | Runs when it can        | Runs when you trigger it   | Makes software run how *they* want |
+| **Goal**        | Functionality     | Propagation / damage    | Delivery of hidden payload | Control, knowledge, chaos          |
+
 
 
 ---
