@@ -1,4 +1,4 @@
-### Some notes about my unortodox coding practices
+### Some notes about my unorthodox coding practices
 
 
 ---
