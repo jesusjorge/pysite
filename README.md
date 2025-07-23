@@ -6,8 +6,7 @@ Most of the stuff that you see here will get you into real trouble, if you try t
 
 I barely even ask or inform the user that a large script is about to be executed and installed. I don't recomend to follow this practices at all.
 
-**It honestly feels illegal to do any of this**
-This doesn’t feel like proper software, it acts more like an aggresive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of doing harm to your machine, it delivers software using extremely questionable and illegal methods.
+This doesn’t feel like proper software. It acts more like an aggressive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of harming your machine, it delivers software using extremely questionable, borderline-illegal methods.
 
 ---
 I like to move my important code to the top of my source file.
