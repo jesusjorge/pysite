@@ -48,3 +48,8 @@ I do this for clarity. I want to be able to find the actual real line that is ra
 I pass the global() context to every exec() in my code. While some people may claim that this pollutes the context, this is exactly what I want. I want to be able to "agregate" objects to my execution enviroment. 
 
 ---
+### Well, if all this sounds wrong, why are we doing this?
+
+You can read about that here 
+
+https://github.com/jesusjorge/jesusjorge.github.io
