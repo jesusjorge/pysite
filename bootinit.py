@@ -34,4 +34,4 @@ class init:
           subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", pip_name])
           return importlib.import_module(module_name)
 
-exec(init.githubGet("jesusjorge","pysite","index.py"))
+exec(init.githubGet("jesusjorge","pysite","index.py"),globals(),locals())
