@@ -3,13 +3,6 @@
 You may notice that I break the file naming convention, by injecting lines like:
 
 ```
-user@fedora:~/Downloads$ python start.py
-Retrieving from https://api.github.com/
-
-
-I will now test Exception handling. I want it to show the actual files involved.
-
-
 Traceback (most recent call last):
   File "https://github.com/jesusjorge/pysite/blob/main/init.py", line 20, in run
   File "https://github.com/jesusjorge/pysite/blob/main/index.py
@@ -27,5 +20,4 @@ Traceback (most recent call last):
   File "https://github.com/jesusjorge/pysite/blob/main/init.py", line 22, in run
 RuntimeError: [https://github.com/jesusjorge/pysite/blob/main/index.py
 Warning: Line numbers in this file are offset from the original source by either +35 or -159] Error while executing remote script
-user@fedora:~/Downloads$ 
 ```
