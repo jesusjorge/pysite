@@ -6,7 +6,7 @@ import urllib.request
 class init:
   @classmethod
   def httpget(cls,path):
-    return request.urlopen(path).read()
+    return urllib.request.urlopen(path).read()
   
   @classmethod
   def require(cls,module_name, pip_name=None):
