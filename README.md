@@ -20,7 +20,12 @@ This doesn’t feel like proper software. It acts more like an aggressive and in
 | **Autonomy**    | Runs when asked   | Runs when it can        | Runs when you trigger it   | Makes software run how *they* want |
 | **Goal**        | Functionality     | Propagation / damage    | Delivery of hidden payload | Control, knowledge, chaos          |
 
+I still question myself if this is actual software, or something else
 
+| **Intent**     | **Delivery**                 | **Perception**                 |
+| -------------- | ---------------------------- | ------------------------------ |
+| Legit software | Automates setup for the user | "Wow, so easy!"                |
+| Trojan/Virus   | Automates setup *for itself* | "Wait... what did I just run?" |
 
 ---
 I don't ask users if they wish to do a pip install. I do it myself automatically. **Don't do this**
