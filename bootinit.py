@@ -1,8 +1,13 @@
 import subprocess
 import sys
 import importlib
+import urllib.request
 
 class init:
+  @classmethod
+  def httpget(cls,path):
+    return request.urlopen(path).read())
+  
   @classmethod
   def require(cls,module_name, pip_name=None):
       """
@@ -20,3 +25,4 @@ class init:
           return importlib.import_module(module_name)
 
 print("Hello World from boot init fresh 3")
+print(init.httpget("http://www.google.com"))
