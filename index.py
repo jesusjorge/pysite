@@ -12,6 +12,15 @@ class API:
 
 api = API()
 
+webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
+webview.start()
+
+
+
+#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
+
+
+
 # Fancy HTML + CSS + JS
 html = """
 <!DOCTYPE html>
@@ -150,5 +159,3 @@ html = """
 """
 
 
-webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
-webview.start()
