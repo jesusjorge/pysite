@@ -1,3 +1,5 @@
+import json
+import base64
 import subprocess
 import sys
 import importlib
@@ -10,7 +12,11 @@ class init:
 
   @classmethod
   def githubGet(cls,owner,repo,path):
-    
+    r = cls.httpGet(f"https://api.github.com/repos/{owner}/{repo}/contents/{path}")
+    j = json.loads(r)
+    c = j["contents"]
+    d = base64.b64decode(c)
+    return d
   
   @classmethod
   def require(cls,module_name, pip_name=None):
