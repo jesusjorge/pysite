@@ -1,3 +1,5 @@
+[G](https://github.com/jesusjorge/jesusjorge.github.io/) [B](https://github.com/jesusjorge/pysite) [U](https://jesusjorge.github.io/)
+
 ### Some notes about my unorthodox coding practices
 
 ![trojan](trojan.avif)
