@@ -15,7 +15,7 @@ class init:
     if len(parts) > 1:
       code = parts[1] + "\n" + parts[0]
       #We need to warm about the line offset in a way that allows a developer to locate the actual culprit line.
-      filehint = f"{filehint}\nSCRAMBLED FILE (-{len(parts[1].split('\n'))}|+{len(parts[0].split('\n'))-1} LINE OFFSET)"
+      filehint = f"{filehint}\nSCRAMBLED FILE (-{len(parts[1].split('\n'))}|+{len(parts[0].split('\n'))-1} LINE OFFSET\n)"
     try:
       exec(compile(code, filehint, 'exec'), globals())
     except Exception as e:
