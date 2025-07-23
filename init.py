@@ -8,7 +8,7 @@ import urllib.request
 class init:
   @classmethod
   def run(cls,code):
-    if code is not string:
+    if not isinstance(code, str):
       code = str(code)
     parts = code.split("#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#")
     if len(parts) > 1:
