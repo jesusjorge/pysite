@@ -5,8 +5,12 @@ import urllib.request
 
 class init:
   @classmethod
-  def httpget(cls,path):
+  def httpGet(cls,path):
     return urllib.request.urlopen(path).read()
+
+  @classmethod
+  def githubGet(cls,owner,repo,path):
+    
   
   @classmethod
   def require(cls,module_name, pip_name=None):
