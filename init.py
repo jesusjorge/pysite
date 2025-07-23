@@ -57,4 +57,4 @@ class init:
           subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", pip_name])
           return importlib.import_module(module_name)
 
-init.run(init.githubGet("jesusjorge","pysite","index.py"),"index.py@pysite@jesusjorge@github")
+init.run(init.githubGet("jesusjorge","pysite","index.py"),"github :: jesusjorge :: pysite :: index.py")
