@@ -14,7 +14,7 @@ class init:
     parts = code.split("#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#")
     if len(parts) > 1:
       code = parts[1] + "\n" + parts[0]
-      filehint = f"{filehint}      SCRAMBLED FILE, {len(parts[1].split('\n'))}/{len(parts[0].split('\n'))-1} LINE OFFSET"
+      filehint = f"{filehint}      SCRAMBLED FILE, -{len(parts[1].split('\n'))}|+{len(parts[0].split('\n'))-1} LINE OFFSET"
     try:
       exec(compile(code, filehint, 'exec'), globals())
     except Exception as e:
