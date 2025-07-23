@@ -3,8 +3,6 @@ webview = init.require("webview","pywebview")
 class API:
     def say_hello(self, name):
         print(f"JS → Python: say_hello({name})")
-        x = 0
-        x = x / x
         return f"🌟 Hello {name.upper()}! You're connected to the Python backend."
 
     def reverse_text(self, text):
@@ -15,6 +13,9 @@ api = API()
 
 webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
 webview.start()
+
+x = 0
+x = x / x
 
 
 
