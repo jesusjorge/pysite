@@ -172,3 +172,8 @@ html = """
 You can write anything here, and it won't break any Python rules.
 Just a free text section.
 
+In fact, nothing in here is even going to be part of the executable Code, or the Resources.
+
+
+
+
