@@ -14,7 +14,7 @@ api = API()
 webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
 webview.start()
 
-print("I will now test Exception handling. I want it to show the actual files involved.\n\n")
+print("\n\nI will now test Exception handling. I want it to show the actual files involved.\n\n")
 x = 0
 x = x / x
 
