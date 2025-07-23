@@ -3,7 +3,7 @@
 ![trojan](trojan.avif)
 
 ---
-Most of the stuff that you see here will get you into real trouble, if you try to execute them in any serious and professional enviroment. They are risky, and I do not recomend it. I assume these are ok if you are running them for a project in a sandbox virtual machine that you can [ab]use.
+Most of the stuff that you see [here](https://github.com/jesusjorge) will get you into real trouble, if you try to execute them in any serious and professional enviroment. They are risky, and I do not recomend it. I assume these are ok if you are running them for a project in a sandbox virtual machine that you can [ab]use.
 
 I barely even ask or inform the user that a large script is about to be executed and installed. I don't recomend to follow this practices at all.
 
