@@ -10,6 +10,9 @@ I barely even ask or inform the user that a large script is about to be executed
 This doesn’t feel like proper software. It acts more like an aggressive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of harming your machine, it delivers software using extremely questionable, borderline-illegal methods.
 
 ---
+I don't ask users if they wish to do a pip install. I do it myself automatically. Looks dangerous, I admit.
+
+---
 I like to move my important code to the top of my source file.
 That means that "resources" inside such file will be put at the bottom.
 And because of that, I will do weird things like flipping the code over.
@@ -42,8 +45,4 @@ Warning: Line numbers in this file are offset from the original source by either
 I do this for clarity. I want to be able to find the actual real line that is raising such Exception. 
 
 ---
-I don't ask users if they wish to do a pip install. I do it myself automatically. Looks dangerous, I admit.
-
----
-
 I pass the global() context to every exec() in my code. While some people may claim that this pollutes the context, this is exactly what I want. I want to be able to "agregate" objects to my execution enviroment. 
