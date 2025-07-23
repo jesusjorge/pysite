@@ -13,7 +13,7 @@ This doesn’t feel like proper software. It acts more like an aggressive and in
 
 | **Software**                         | **Virus**                                           |
 | ------------------------------------ | --------------------------------------------------- |
-| Intended to perform useful tasks     | Intended to replicate and spread, often maliciously |
+| Intended to perform useful tasks     | Intended to replicate and spread                    |
 | Requires user permission (typically) | Tries to avoid detection and bypass consent         |
 | Has a clear, documented purpose      | Often hides its real purpose                        |
 | Usually sandboxed or controlled      | Tries to escape control or manipulate systems       |
