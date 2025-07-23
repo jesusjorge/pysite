@@ -6,6 +6,8 @@ I like to move my important code to the top of my source file.
 That means that "resources" inside such file will be put at the bottom.
 And because of that, I will do weird things like flipping the code over.
 
+https://github.com/jesusjorge/pysite/blob/main/index.py
+
 ---
 You may notice that I break the file naming convention, by injecting lines like:
 
