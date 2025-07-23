@@ -1,5 +1,7 @@
 ### Some notes about my unortodox coding practices
 
+
+---
 You may notice that I break the file naming convention, by injecting lines like:
 
 ```
@@ -21,3 +23,5 @@ Traceback (most recent call last):
 RuntimeError: [https://github.com/jesusjorge/pysite/blob/main/index.py
 Warning: Line numbers in this file are offset from the original source by either +35 or -159] Error while executing remote script
 ```
+
+I do this for clarity. I want to be able to find the actual real line that is raising such Exception. 
