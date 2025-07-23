@@ -1,6 +1,5 @@
 webview = init.require("webview","pywebview")
 
-# Backend API
 class API:
     def say_hello(self, name):
         print(f"JS → Python: say_hello({name})")
@@ -17,10 +16,11 @@ webview.start()
 
 
 
+
+
+
+################################################################################################
 #e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
-
-
-
 # Fancy HTML + CSS + JS
 html = """
 <!DOCTYPE html>
