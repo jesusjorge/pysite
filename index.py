@@ -112,7 +112,7 @@ html = """
 
 </head>
 <body>
-  <h1>🤖 Welcome to PyFuturism 234</h1>
+  <h1>🤖 It works! </h1>
   <div class="input-box">
     <input id="nameInput" placeholder="Type your name..." />
   </div>
