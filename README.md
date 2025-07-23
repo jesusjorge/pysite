@@ -1,7 +1,7 @@
 ### Some notes about my unortodox coding practices
 
 
-
+---
 I like to move my important code to the top of my source file.
 That means that "resources" inside such file will be put at the bottom.
 And because of that, I will do weird things like flipping the code over.
