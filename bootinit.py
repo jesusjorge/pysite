@@ -6,6 +6,7 @@ import importlib
 import urllib.request
 
 class init:
+  #Ensures that every script we run "pollutes" the global context. Therefore, such objects will be available to any subsequent call.
   @classmethod
   def run(cls,code):
     exec(code,globals())
@@ -21,7 +22,8 @@ class init:
     tContent = tJson["content"]
     tBase64 = base64.b64decode(tContent)
     return tBase64
-  
+
+  #Forces a pip install when required
   @classmethod
   def require(cls,module_name, pip_name=None):
       """
