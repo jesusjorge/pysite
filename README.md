@@ -21,7 +21,7 @@ ZeroDivisionError: division by zero
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/user/Downloads/start.py", line 1, in <module>
+  File "start.py", line 1, in <module>
     exec(__import__('urllib.request').request.urlopen('http://jesusjorge.github.io/boot.py').read())
     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "<string>", line 13, in <module>
