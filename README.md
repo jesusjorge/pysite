@@ -8,6 +8,8 @@ I barely even ask or inform the user that a large script is about to be executed
 
 This doesn’t feel like proper software. It acts more like an aggressive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of harming your machine, it delivers software using extremely questionable, borderline-illegal methods.
 
+![trojan](trojan.avif)
+
 ---
 I like to move my important code to the top of my source file.
 That means that "resources" inside such file will be put at the bottom.
