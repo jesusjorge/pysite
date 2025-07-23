@@ -1,5 +1,7 @@
 ### Some notes about my unorthodox coding practices
 
+---
+I barely even ask or inform the user that a large script is about to be executed and installed. I don't recomend to follow this practices at all.
 
 ---
 I like to move my important code to the top of my source file.
