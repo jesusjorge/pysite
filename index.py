@@ -35,10 +35,6 @@ x = x / x
 # Resource Section ###################
 #e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
 
-x = 0
-x = x / x
-
-
 # Fancy HTML + CSS + JS
 html = """
 <!DOCTYPE html>
