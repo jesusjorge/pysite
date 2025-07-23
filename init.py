@@ -15,7 +15,6 @@ class init:
     parts = code.split("#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#")
     if len(parts) > 1:
       code = parts[1] + "\n" + parts[0]
-    print(code)
     exec(code,globals())
   
   @classmethod
