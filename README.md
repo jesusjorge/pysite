@@ -11,6 +11,15 @@ I barely even ask or inform the user that a large script is about to be executed
 
 This doesn’t feel like proper software. It acts more like an aggressive and invasive Trojan Horse, packed with hacks and virus like behavior. But instead of harming your machine, it delivers software using extremely questionable, borderline-illegal methods.
 
+| **Software**                         | **Virus**                                           |
+| ------------------------------------ | --------------------------------------------------- |
+| Intended to perform useful tasks     | Intended to replicate and spread, often maliciously |
+| Requires user permission (typically) | Tries to avoid detection and bypass consent         |
+| Has a clear, documented purpose      | Often hides its real purpose                        |
+| Usually sandboxed or controlled      | Tries to escape control or manipulate systems       |
+| Is transparent about behavior        | Is deceptive by design                              |
+
+
 ---
 I don't ask users if they wish to do a pip install. I do it myself automatically. **Don't do this**
 
