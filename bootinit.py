@@ -14,7 +14,7 @@ class init:
   def githubGet(cls,owner,repo,path):
     r = cls.httpGet(f"https://api.github.com/repos/{owner}/{repo}/contents/{path}")
     j = json.loads(r)
-    c = j["contents"]
+    c = j["content"]
     d = base64.b64decode(c)
     return d
   
