@@ -25,4 +25,4 @@ class init:
           return importlib.import_module(module_name)
 
 print("Hello World from boot init fresh 3")
-print(init.httpget("http://www.google.com"))
+print(init.httpget("http://checkip.dyndns.org"))
