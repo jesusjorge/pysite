@@ -16,7 +16,7 @@ class init:
     parts = code.split("#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#")
     if len(parts) > 1:
       code = parts[1] + "\n" + parts[0]
-      filehint = "SCRAMBLED. Ignore line numbers: " + filehint
+      filehint = "SCRAMBLED. IGNORE LINE NUMBERS: " + filehint
     try:
       exec(compile(code, filehint, 'exec'), globals())
     except Exception as e:
