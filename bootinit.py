@@ -1,1 +1,1 @@
-print("Hello World from boot init")
+print("Hello World from boot init fresh")
