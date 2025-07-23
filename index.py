@@ -17,14 +17,37 @@ webview.start()
 
 
 
-#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
-# Resource Section ###################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ######################################
-
-
-
-
-
+# Resource Section ###################
+#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
 
 
 # Fancy HTML + CSS + JS
@@ -184,41 +207,11 @@ html = """
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
-# And this is the ignore section #####
 ######################################
+# And this is the ignore section #####
+#e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
+
+
 
 You can write anything here, and it won't break any Python rules.
 Just a free text section.
