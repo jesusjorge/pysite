@@ -16,11 +16,19 @@ class init:
 
   @classmethod
   def githubGet(cls,owner,repo,path):
-    tResponse = cls.httpGet(f"https://api.github.com/repos/{owner}/{repo}/contents/{path}")
-    tJson = json.loads(tResponse)
-    tContent = tJson["content"]
-    tBase64 = base64.b64decode(tContent)
-    return tBase64
+    try:
+      tResponse = cls.httpGet(f"https://api.github.com/repos/{owner}/{repo}/contents/{path}")
+      tJson = json.loads(tResponse)
+      tContent = tJson["content"]
+      tBase64 = base64.b64decode(tContent)
+      return tBase64
+    except urllib.error.HTTPError as e:
+      if e.code == 403:
+        tRequest = urllib.request.urlopen(f"https://raw.githubusercontent.com/{owner}/{repo}/refs/heads/main/{path}")
+        tResponse = tRequest.read()
+        return tResponse
+      else:
+          raise
 
   @classmethod
   def require(cls,module_name, pip_name=None):
