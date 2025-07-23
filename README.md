@@ -38,4 +38,4 @@ I don't ask users if they wish to do a pip install. I do it myself automatically
 
 ---
 
-I pass the global() context to every exec() in my code. While some people may claim that this pollutes the context, this is exactly what I want.
+I pass the global() context to every exec() in my code. While some people may claim that this pollutes the context, this is exactly what I want. I want to be able to "agregate" objects to my execution enviroment. 
