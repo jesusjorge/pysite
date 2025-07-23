@@ -9,7 +9,7 @@ class API:
         print(f"JS → Python: reverse_text({text})")
         return text[::-1]
 
-api = API()
+api = API2()
 
 webview.create_window("🌌 PyFuturism Interface", html=html, js_api=api, width=600, height=500)
 webview.start()
