@@ -22,7 +22,6 @@ class init:
     tBase64 = base64.b64decode(tContent)
     return tBase64
 
-  #Forces a pip install when required
   @classmethod
   def require(cls,module_name, pip_name=None):
       """
