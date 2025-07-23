@@ -7,7 +7,7 @@ import urllib.request
 
 class init:
   @classmethod
-  def run(cls,code,filehint = "<string>"):
+  def run(cls,code,filehint):
     if not isinstance(code, str):
       code = code.decode('utf-8')
     #e34bbc0f-fae2-490a-9219-d2c8ff8d8875#
@@ -57,4 +57,4 @@ class init:
           subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", pip_name])
           return importlib.import_module(module_name)
 
-init.run(init.githubGet("jesusjorge","pysite","index.py"))
+init.run(init.githubGet("jesusjorge","pysite","index.py"),"index.py@pysite@jesusjorge@github")
