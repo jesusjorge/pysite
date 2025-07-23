@@ -24,7 +24,7 @@ class init:
       return tBase64
     except urllib.error.HTTPError as e:
       if e.code == 403:
-        tRequest = urllib.request.urlopen(f"https://raw.githubusercontent.com/{owner}/{repo}/refs/heads/main/{path}")
+        tRequest = urllib.request.urlopen(f"https://raw.githubusercontent.com/{owner}/{repo}/main/{path}")
         tResponse = tRequest.read()
         return tResponse
       else:
