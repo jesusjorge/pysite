@@ -6,7 +6,6 @@ import importlib
 import urllib.request
 
 class init:
-  #Ensures that every script we run "pollutes" the global context. Therefore, such objects will be available to any subsequent call.
   @classmethod
   def run(cls,code):
     exec(code,globals())
